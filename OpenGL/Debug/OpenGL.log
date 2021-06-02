@@ -1,3 +1,0 @@
-﻿  Application.cpp
-LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
-  OpenGL.vcxproj -> C:\dev\PGS\OpenGL\The Cherno\Debug\OpenGL.exe
