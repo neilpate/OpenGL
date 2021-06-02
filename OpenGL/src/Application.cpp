@@ -27,6 +27,7 @@ int main(void)
 
 
         glBegin(GL_TRIANGLES);
+        glColor3f(0, 1, 1); 
         glVertex2f(-0.5, -0.5);
         glVertex2f(0, 0.5);
         glVertex2f(0.5, -0.5);
