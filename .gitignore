@@ -7,3 +7,5 @@ bin/
 *.pdb
 
 OpenGL/Debug/
+
+Debug/OpenGL.exe
