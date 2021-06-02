@@ -1,6 +1,6 @@
+# Directories
+.vs/
+bin/
 
-*.exe
-
-*.pdb
-
-*.ilk
+# Files
+*.user
