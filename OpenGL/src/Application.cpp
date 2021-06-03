@@ -1,4 +1,7 @@
+#include <GL/glew.h>
 #include <GLFW/glfw3.h>
+#include <iostream>
+
 
 int main(void)
 {
@@ -16,8 +19,21 @@ int main(void)
         return -1;
     }
 
+
     /* Make the window's context current */
     glfwMakeContextCurrent(window);
+
+    std::cout << glGetString(GL_VERSION) << std::endl;
+
+    GLenum err = glewInit();
+
+    if (err != GLEW_OK) {
+        std::cout << "GLEW did not init ok";
+    }
+    else {
+        std::cout << "GLEW did init ok";
+    }
+
 
     /* Loop until the user closes the window */
     while (!glfwWindowShouldClose(window))
@@ -27,7 +43,7 @@ int main(void)
 
 
         glBegin(GL_TRIANGLES);
-        glColor3f(0, 1, 1); 
+        glColor3f(0, 0, 1); 
         glVertex2f(-0.5, -0.5);
         glVertex2f(0, 0.5);
         glVertex2f(0.5, -0.5);
