@@ -104,6 +104,12 @@ static int CreateShader(const std::string& vertexShader, const std::string& frag
 }
 
 
+void GLAPIENTRY MessageCallback(GLenum source, GLenum type, GLuint id, GLenum severity, GLsizei length, const GLchar* message, const void* userParam)
+{
+	//error = true;
+	std::cout << "[OpenGL Error](" << type << ") " << message << std::endl;
+}
+
 int main(void)
 {
 	GLFWwindow* window;
@@ -111,6 +117,8 @@ int main(void)
 	/* Initialize the library */
 	if (!glfwInit())
 		return -1;
+
+	glfwWindowHint(GLFW_OPENGL_DEBUG_CONTEXT, GL_TRUE);
 
 	/* Create a windowed mode window and its OpenGL context */
 	window = glfwCreateWindow(640, 480, "Hello World", NULL, NULL);
@@ -127,6 +135,8 @@ int main(void)
 	std::cout << glGetString(GL_VERSION) << std::endl;
 
 	GLenum err = glewInit();
+
+	glDebugMessageCallback(MessageCallback, 0);
 
 	if (err != GLEW_OK)
 	{
